@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "frappe_hospital_inpatient_ipd_bed_manager"
+version = "1.0.0"
+description = "Frappe Hospital Inpatient Ipd Bed Manager - Official Frappe Framework App"
+authors = [{ name = "Shyamkumar Pandey", email = "shyampandey1104@gmail.com" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "frappe"
+]
