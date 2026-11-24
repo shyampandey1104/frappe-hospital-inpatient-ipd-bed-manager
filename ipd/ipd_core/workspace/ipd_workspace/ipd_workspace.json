@@ -1,30 +1,104 @@
 {
- "charts": [],
- "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Frappe Hospital Inpatient Ipd Bed Manager Workspace\",\"level\":4}}]",
+ "charts": [
+  {
+   "chart_name": "Frappe Hospital Inpatient Ipd Bed Manager Volume Trend",
+   "label": "Frappe Hospital Inpatient Ipd Bed Manager Volume Trend"
+  }
+ ],
+ "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Frappe Hospital Inpatient Ipd Bed Manager Workspace\", \"level\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Frappe Hospital Inpatient Ipd Bed Manager Operations\"}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Audit & Compliance\"}}]",
  "creation": "2026-04-01 10:00:00.000000",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "octicon octicon-book",
+ "icon": "octicon octicon-package",
  "idx": 0,
  "is_hidden": 0,
  "label": "Frappe Hospital Inpatient Ipd Bed Manager",
- "links": [],
+ "links": [
+  {
+   "label": "Operational Documents",
+   "type": "Card Break"
+  },
+  {
+   "doctype": "Frappe Hospital Inpatient Ipd Bed Manager Entry",
+   "label": "Frappe Hospital Inpatient Ipd Bed Manager Entry",
+   "link_to": "Frappe Hospital Inpatient Ipd Bed Manager Entry",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "label": "Audit & Reports",
+   "type": "Card Break"
+  },
+  {
+   "doctype": "Frappe Hospital Inpatient Ipd Bed Manager Audit Log",
+   "label": "Frappe Hospital Inpatient Ipd Bed Manager Audit Log",
+   "link_to": "Frappe Hospital Inpatient Ipd Bed Manager Audit Log",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "is_query_report": 1,
+   "label": "Frappe Hospital Inpatient Ipd Bed Manager Summary",
+   "link_to": "Frappe Hospital Inpatient Ipd Bed Manager Summary",
+   "link_type": "Report",
+   "type": "Link"
+  },
+  {
+   "label": "Configuration",
+   "type": "Card Break"
+  },
+  {
+   "doctype": "Frappe Hospital Inpatient Ipd Bed Manager Settings",
+   "label": "Frappe Hospital Inpatient Ipd Bed Manager Settings",
+   "link_to": "Frappe Hospital Inpatient Ipd Bed Manager Settings",
+   "link_type": "DocType",
+   "type": "Link"
+  }
+ ],
  "modified": "2026-04-01 10:00:00.000000",
  "modified_by": "Administrator",
  "module": "Ipd_Core",
  "name": "Frappe Hospital Inpatient Ipd Bed Manager",
  "owner": "Administrator",
  "public": 1,
- "quick_lists": [],
+ "quick_lists": [
+  {
+   "document_type": "Frappe Hospital Inpatient Ipd Bed Manager Entry",
+   "label": "Recent Frappe Hospital Inpatient Ipd Bed Manager Entries"
+  }
+ ],
  "roles": [
   {
    "role": "System Manager"
+  },
+  {
+   "role": "Accounts User"
   }
  ],
  "sequence_id": 1,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "All Frappe Hospital Inpatient Ipd Bed Manager Entrys",
+   "link_to": "Frappe Hospital Inpatient Ipd Bed Manager Entry",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "label": "System Settings",
+   "link_to": "Frappe Hospital Inpatient Ipd Bed Manager Settings",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "label": "Compliance Digest",
+   "link_to": "Frappe Hospital Inpatient Ipd Bed Manager Summary",
+   "type": "Report"
+  }
+ ],
  "title": "Frappe Hospital Inpatient Ipd Bed Manager"
 }

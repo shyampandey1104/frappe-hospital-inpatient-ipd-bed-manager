@@ -1,0 +1,107 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-04-01 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "reference_doctype",
+  "reference_name",
+  "action",
+  "column_break_audit",
+  "performed_by",
+  "timestamp",
+  "status",
+  "section_break_checksum",
+  "checksum_hash",
+  "payload_snapshot"
+ ],
+ "fields": [
+  {
+   "fieldname": "reference_doctype",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reference DocType",
+   "reqd": 1
+  },
+  {
+   "fieldname": "reference_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reference ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "action",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Audit Action",
+   "options": "Created\nModified\nSubmitted\nCancelled\nSynced\nReconciled"
+  },
+  {
+   "fieldname": "column_break_audit",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Administrator",
+   "fieldname": "performed_by",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Performed By"
+  },
+  {
+   "fieldname": "timestamp",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Timestamp"
+  },
+  {
+   "default": "Success",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Success\nFailed\nWarning"
+  },
+  {
+   "fieldname": "section_break_checksum",
+   "fieldtype": "Section Break",
+   "label": "Cryptographic Integrity Proof"
+  },
+  {
+   "fieldname": "checksum_hash",
+   "fieldtype": "Data",
+   "label": "SHA-256 Checksum",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payload_snapshot",
+   "fieldtype": "Code",
+   "label": "Payload JSON Snapshot",
+   "options": "JSON",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-04-01 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ipd_Core",
+ "name": "Frappe Hospital Inpatient Ipd Bed Manager Audit Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager"
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Auditor"
+  }
+ ],
+ "read_only": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 0
+}

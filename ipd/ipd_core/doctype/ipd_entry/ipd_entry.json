@@ -1,59 +1,155 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "allow_rename": 0,
+ "autoname": "naming_series:HOSPI-.YYYY.-.####",
  "creation": "2026-04-01 10:00:00.000000",
  "doctype": "DocType",
+ "document_type": "Document",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_1",
+  "naming_series",
   "title",
-  "status",
-  "column_break_1",
-  "posting_date",
   "company",
-  "section_break_2",
+  "posting_date",
+  "status",
+  "column_break_main",
+  "party_type",
+  "party",
+  "currency",
+  "audit_status",
+  "section_break_items",
+  "items",
+  "section_break_totals",
+  "total_qty",
+  "total_amount",
+  "column_break_totals",
+  "grand_total",
+  "section_break_remarks",
   "remarks",
   "amended_from"
  ],
  "fields": [
   {
-   "fieldname": "section_break_1",
-   "fieldtype": "Section Break",
-   "label": "Document Header"
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "HOSPI-.YYYY.-.####\nHOSPI-SUB-.YYYY.-.####",
+   "reqd": 1
   },
   {
    "fieldname": "title",
    "fieldtype": "Data",
-   "label": "Title",
+   "in_list_view": 1,
+   "label": "Title / Identifier",
+   "reqd": 1
+  },
+  {
+   "default": "Shyam Enterprise Ltd",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
    "reqd": 1
   },
   {
    "default": "Draft",
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Status",
-   "options": "Draft\nPending\nApproved\nRejected\nCompleted"
+   "options": "Draft\nPending Review\nApproved\nSubmitted\nCompleted\nRejected\nCancelled",
+   "reqd": 1
   },
   {
-   "fieldname": "column_break_1",
+   "fieldname": "column_break_main",
    "fieldtype": "Column Break"
   },
   {
-   "default": "Today",
-   "fieldname": "posting_date",
-   "fieldtype": "Date",
-   "label": "Posting Date"
+   "default": "Customer",
+   "fieldname": "party_type",
+   "fieldtype": "Select",
+   "label": "Party Type",
+   "options": "Customer\nSupplier\nPatient\nFacility\nPartner\nContractor"
   },
   {
-   "fieldname": "company",
+   "fieldname": "party",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Party Name / Code",
+   "reqd": 1
+  },
+  {
+   "default": "INR",
+   "fieldname": "currency",
    "fieldtype": "Link",
-   "label": "Company",
-   "options": "Company"
+   "label": "Currency",
+   "options": "Currency"
   },
   {
-   "fieldname": "section_break_2",
+   "default": "Pending",
+   "fieldname": "audit_status",
+   "fieldtype": "Select",
+   "label": "Audit Compliance",
+   "options": "Pending\nCompliant\nFlagged\nAudited"
+  },
+  {
+   "fieldname": "section_break_items",
    "fieldtype": "Section Break",
-   "label": "Audit Information"
+   "label": "Line Items & Operational Metrics"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Frappe Hospital Inpatient Ipd Bed Manager Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_totals",
+   "fieldtype": "Section Break",
+   "label": "Totals & Valuation"
+  },
+  {
+   "default": "0.0",
+   "fieldname": "total_qty",
+   "fieldtype": "Float",
+   "label": "Total Quantity",
+   "read_only": 1
+  },
+  {
+   "default": "0.0",
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_totals",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0.0",
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_remarks",
+   "fieldtype": "Section Break",
+   "label": "Remarks & Notes"
   },
   {
    "fieldname": "remarks",
@@ -65,19 +161,17 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Ipd Entry",
+   "options": "Frappe Hospital Inpatient Ipd Bed Manager Entry",
    "print_hide": 1,
    "read_only": 1
   }
  ],
- "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
  "modified": "2026-04-01 10:00:00.000000",
  "modified_by": "Administrator",
  "module": "Ipd_Core",
- "name": "Ipd Entry",
- "naming_rule": "By fieldname",
+ "name": "Frappe Hospital Inpatient Ipd Bed Manager Entry",
  "owner": "Administrator",
  "permissions": [
   {
@@ -94,18 +188,21 @@
    "write": 1
   },
   {
+   "cancel": 0,
    "create": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
    "read": 1,
    "report": 1,
-   "role": "All",
+   "role": "Accounts User",
+   "submit": 1,
    "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Auditor"
   }
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
  "track_changes": 1
 }

@@ -1,0 +1,96 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-04-01 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "api_endpoint",
+  "sync_frequency",
+  "column_break_settings",
+  "batch_size",
+  "enable_audit_logging",
+  "alert_email",
+  "section_break_credentials",
+  "auth_token",
+  "webhook_secret"
+ ],
+ "fields": [
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enable Integration Module"
+  },
+  {
+   "default": "https://api.hospital_inpatient_ipd_bed_manager.internal/v1",
+   "fieldname": "api_endpoint",
+   "fieldtype": "Data",
+   "label": "Primary API Endpoint",
+   "reqd": 1
+  },
+  {
+   "default": "Daily",
+   "fieldname": "sync_frequency",
+   "fieldtype": "Select",
+   "label": "Sync Frequency",
+   "options": "Realtime\nHourly\nDaily\nManual"
+  },
+  {
+   "fieldname": "column_break_settings",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "100",
+   "fieldname": "batch_size",
+   "fieldtype": "Int",
+   "label": "Reconciliation Batch Size"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_audit_logging",
+   "fieldtype": "Check",
+   "label": "Enable Cryptographic Audit Logging"
+  },
+  {
+   "default": "shyampandey1104@gmail.com",
+   "fieldname": "alert_email",
+   "fieldtype": "Data",
+   "label": "Compliance Officer Alert Email"
+  },
+  {
+   "fieldname": "section_break_credentials",
+   "fieldtype": "Section Break",
+   "label": "API Credentials & Secrets"
+  },
+  {
+   "fieldname": "auth_token",
+   "fieldtype": "Password",
+   "label": "API Bearer Token"
+  },
+  {
+   "fieldname": "webhook_secret",
+   "fieldtype": "Password",
+   "label": "HMAC Webhook Secret"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-04-01 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ipd_Core",
+ "name": "Frappe Hospital Inpatient Ipd Bed Manager Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
